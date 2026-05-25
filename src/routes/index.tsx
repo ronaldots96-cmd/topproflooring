@@ -403,26 +403,37 @@ function Problem() {
   );
 }
 
-/* ---------- SOLUTION ---------- */
+/* ---------- SOLUTION (PARALLAX) ---------- */
 function Solution() {
   return (
-    <section className="relative overflow-hidden bg-primary py-24 text-primary-foreground md:py-28">
-      <div className="absolute inset-0 bg-grid-faint opacity-30" />
-      <div className="absolute -left-40 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-accent/20 blur-3xl" />
+    <section
+      className="relative overflow-hidden bg-parallax py-28 text-primary-foreground md:py-36"
+      style={{ backgroundImage: `url(${parallaxFloor})` }}
+    >
+      {/* Burgundy overlay 78% with gradient depth */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.22 0.13 14 / 0.92) 0%, oklch(0.27 0.12 16 / 0.82) 50%, oklch(0.22 0.13 14 / 0.90) 100%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-grid-faint opacity-20" />
+      <div className="absolute -left-40 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-accent/15 blur-3xl" />
       <div className="absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl px-4 text-center md:px-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-accent" />
           The Seamless Subcontractor Solution
         </div>
         <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] md:text-6xl">
           Your Trusted Subcontractor for{" "}
-          <span className="bg-gradient-to-r from-accent to-amber-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent to-amber-200 bg-clip-text text-transparent">
             Every Flooring Job
           </span>
         </h2>
-        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-primary-foreground/75">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
           We work seamlessly with general contractors, builders, and remodelers —
           delivering precision, efficiency, and a flawless finish every time. We
           step in exactly when scheduled, execute to commercial-grade standards,
@@ -432,7 +443,7 @@ function Solution() {
           <Button
             size="lg"
             asChild
-            className="group h-14 rounded-xl bg-accent px-8 text-[15px] font-extrabold tracking-tight text-accent-foreground shadow-2xl shadow-accent/30 transition-all hover:scale-[1.02] hover:bg-accent-deep"
+            className="group h-14 rounded-xl bg-accent px-8 text-[15px] font-extrabold tracking-tight text-accent-foreground shadow-2xl shadow-accent/40 transition-all duration-300 hover:scale-[1.02] hover:bg-accent-deep"
           >
             <a href="#quote">
               REQUEST A QUOTE
