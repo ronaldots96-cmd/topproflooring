@@ -9,7 +9,7 @@ import {
   Clock,
   Sparkles,
   Wrench,
-  Layers,
+  
   Handshake,
   DollarSign,
   CheckCircle2,
@@ -46,6 +46,8 @@ import serviceHardwood from "@/assets/service-hardwood.jpg";
 import serviceBuff from "@/assets/service-buff.jpg";
 import serviceLvp from "@/assets/service-lvp.jpg";
 import serviceRepair from "@/assets/service-repair.jpg";
+import parallaxFloor from "@/assets/parallax-floor.jpg";
+import logoTopPro from "@/assets/logo-top-pro.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -76,18 +78,14 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20 ring-1 ring-inset ring-white/10">
-            <Layers className="h-5 w-5" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-[15px] font-extrabold tracking-tight text-primary">
-              TOP PRO
-            </div>
-            <div className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-accent-deep">
-              Flooring · LLC
-            </div>
-          </div>
+        <a href="#top" className="flex items-center gap-3 transition-all duration-300 hover:opacity-90">
+          <img
+            src={logoTopPro}
+            alt="Top Pro Flooring LLC"
+            width={160}
+            height={120}
+            className="h-12 w-auto object-contain md:h-14"
+          />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
@@ -405,26 +403,37 @@ function Problem() {
   );
 }
 
-/* ---------- SOLUTION ---------- */
+/* ---------- SOLUTION (PARALLAX) ---------- */
 function Solution() {
   return (
-    <section className="relative overflow-hidden bg-primary py-24 text-primary-foreground md:py-28">
-      <div className="absolute inset-0 bg-grid-faint opacity-30" />
-      <div className="absolute -left-40 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-accent/20 blur-3xl" />
+    <section
+      className="relative overflow-hidden bg-parallax py-28 text-primary-foreground md:py-36"
+      style={{ backgroundImage: `url(${parallaxFloor})` }}
+    >
+      {/* Burgundy overlay 78% with gradient depth */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.22 0.13 14 / 0.92) 0%, oklch(0.27 0.12 16 / 0.82) 50%, oklch(0.22 0.13 14 / 0.90) 100%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-grid-faint opacity-20" />
+      <div className="absolute -left-40 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-accent/15 blur-3xl" />
       <div className="absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl px-4 text-center md:px-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-accent" />
           The Seamless Subcontractor Solution
         </div>
         <h2 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] md:text-6xl">
           Your Trusted Subcontractor for{" "}
-          <span className="bg-gradient-to-r from-accent to-amber-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent to-amber-200 bg-clip-text text-transparent">
             Every Flooring Job
           </span>
         </h2>
-        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-primary-foreground/75">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
           We work seamlessly with general contractors, builders, and remodelers —
           delivering precision, efficiency, and a flawless finish every time. We
           step in exactly when scheduled, execute to commercial-grade standards,
@@ -434,7 +443,7 @@ function Solution() {
           <Button
             size="lg"
             asChild
-            className="group h-14 rounded-xl bg-accent px-8 text-[15px] font-extrabold tracking-tight text-accent-foreground shadow-2xl shadow-accent/30 transition-all hover:scale-[1.02] hover:bg-accent-deep"
+            className="group h-14 rounded-xl bg-accent px-8 text-[15px] font-extrabold tracking-tight text-accent-foreground shadow-2xl shadow-accent/40 transition-all duration-300 hover:scale-[1.02] hover:bg-accent-deep"
           >
             <a href="#quote">
               REQUEST A QUOTE
@@ -557,10 +566,18 @@ function Services() {
   );
 }
 
-/* ---------- WHY US (bento) ---------- */
+/* ---------- WHY US (balanced symmetric grid) ---------- */
 function WhyUs() {
+  const features = [
+    { icon: Wrench, t: "Full-Service Expertise", d: "Installation, Refinishing, Buff & Coat, and Repair — handled by one specialized team across every phase of your build." },
+    { icon: Users, t: "Professional Team", d: "Licensed, insured, and trained crews built for demanding active job sites." },
+    { icon: Clock, t: "Reliable Scheduling", d: "Fast turnaround and strict adherence to your construction phases and milestones." },
+    { icon: Sparkles, t: "Dustless System", d: "Zero airborne mess — protects fresh paint, HVAC, and your cleaning crew's time." },
+    { icon: Handshake, t: "Flexible Subcontracting", d: "Per-project bids or ongoing long-term trade partnerships — fully tailored." },
+    { icon: DollarSign, t: "Transparent Pricing", d: "Clean line-items aligned with your budget. No surprises. No hidden fees. Ever." },
+  ];
   return (
-    <section id="why" className="bg-background py-20 md:py-24">
+    <section id="why" className="bg-surface-1 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mb-14 text-center">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-accent-deep">
@@ -572,72 +589,61 @@ function WhyUs() {
           </h2>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid auto-rows-[minmax(0,1fr)] gap-5 md:grid-cols-6">
-          {/* Big feature */}
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-primary p-8 text-primary-foreground shadow-xl md:col-span-3 md:row-span-2 md:p-10">
-            <div className="absolute -right-12 -top-12 h-56 w-56 rounded-full bg-accent/25 blur-3xl" />
-            <div className="absolute inset-0 bg-grid-faint opacity-30" />
-            <div className="relative">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground shadow-lg shadow-accent/40">
-                <Wrench className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 text-2xl font-extrabold tracking-tight md:text-3xl">
-                Full-Service Expertise
-              </h3>
-              <p className="mt-3 max-w-md text-[15px] leading-relaxed text-primary-foreground/75">
-                Installation, Refinishing, Buff &amp; Coat, and Repair — all
-                handled by one specialized team. One subcontractor, every
-                flooring scope, every phase of your build.
-              </p>
-              <div className="mt-8 grid grid-cols-3 gap-3">
-                {[
-                  { n: "100%", l: "Insured" },
-                  { n: "NC+SC", l: "Coverage" },
-                  { n: "0", l: "Dust" },
-                ].map((s) => (
-                  <div
-                    key={s.l}
-                    className="rounded-xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur"
-                  >
-                    <div className="text-xl font-extrabold tracking-tight text-accent">
-                      {s.n}
-                    </div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/60">
-                      {s.l}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {[
-            { icon: Users, t: "Professional Team", d: "Licensed, insured, and trained for demanding job sites." },
-            { icon: Clock, t: "Reliable Scheduling", d: "Fast turnaround, strict adherence to your phases." },
-            { icon: Sparkles, t: "Dustless System", d: "Zero mess for your cleaning crew." },
-            { icon: Handshake, t: "Flexible Subcontracting", d: "Per-project or ongoing partnerships." },
-            { icon: DollarSign, t: "Transparent Pricing", d: "No hidden line-items. Ever." },
-          ].map((it, i) => (
+        {/* Symmetric 3-column grid — perfectly balanced on desktop, 2-col tablet, 1-col mobile */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((it, i) => (
             <div
               key={it.t}
-              className={`group rounded-3xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl ${
-                i === 0 ? "md:col-span-3" : i === 1 || i === 2 ? "md:col-span-3" : "md:col-span-3"
+              className={`group flex h-full flex-col rounded-3xl border p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl md:p-8 ${
+                i === 0
+                  ? "border-accent/30 bg-primary text-primary-foreground hover:border-accent/60 hover:shadow-primary/20"
+                  : "border-border bg-card hover:border-accent/40 hover:shadow-primary/10"
               }`}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/15 text-accent-deep ring-1 ring-accent/20 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                  <it.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-bold tracking-tight text-primary">
-                    {it.t}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {it.d}
-                  </p>
-                </div>
+              <div
+                className={`flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 ${
+                  i === 0
+                    ? "bg-accent text-accent-foreground shadow-lg shadow-accent/40"
+                    : "bg-accent/15 text-accent-deep ring-1 ring-accent/20 group-hover:bg-accent group-hover:text-accent-foreground group-hover:shadow-md"
+                }`}
+              >
+                <it.icon className="h-6 w-6" />
               </div>
+              <h3
+                className={`mt-6 text-xl font-extrabold tracking-tight ${
+                  i === 0 ? "text-primary-foreground" : "text-primary"
+                }`}
+              >
+                {it.t}
+              </h3>
+              <p
+                className={`mt-2.5 flex-1 text-[15px] leading-relaxed ${
+                  i === 0 ? "text-primary-foreground/75" : "text-muted-foreground"
+                }`}
+              >
+                {it.d}
+              </p>
+              {i === 0 && (
+                <div className="mt-6 grid grid-cols-3 gap-2.5 border-t border-white/10 pt-6">
+                  {[
+                    { n: "100%", l: "Insured" },
+                    { n: "NC+SC", l: "Coverage" },
+                    { n: "0", l: "Dust" },
+                  ].map((s) => (
+                    <div
+                      key={s.l}
+                      className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-center backdrop-blur"
+                    >
+                      <div className="text-base font-extrabold tracking-tight text-accent">
+                        {s.n}
+                      </div>
+                      <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-white/65">
+                        {s.l}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -1024,81 +1030,77 @@ function QuoteForm() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="border-t border-border bg-surface-1 py-14">
+    <footer className="border-t border-white/10 bg-primary-deep py-16 text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-4 md:px-6">
         <div>
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
-              <Layers className="h-5 w-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-[15px] font-extrabold tracking-tight text-primary">
-                TOP PRO
-              </div>
-              <div className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-accent-deep">
-                Flooring · LLC
-              </div>
-            </div>
+          <div className="inline-flex items-center justify-center rounded-2xl bg-white/95 p-3 shadow-lg ring-1 ring-white/20">
+            <img
+              src={logoTopPro}
+              alt="Top Pro Flooring LLC"
+              width={200}
+              height={150}
+              className="h-16 w-auto object-contain"
+            />
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-sm leading-relaxed text-white/70">
             The flooring subcontractor that protects your schedule, your budget,
             and your reputation.
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Quick Links
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-            <li><a href="#services" className="hover:text-accent-deep">Services</a></li>
-            <li><a href="#why" className="hover:text-accent-deep">Why Us</a></li>
-            <li><a href="#process" className="hover:text-accent-deep">Process</a></li>
-            <li><a href="#faq" className="hover:text-accent-deep">FAQ</a></li>
-            <li><a href="#quote" className="hover:text-accent-deep">Request a Quote</a></li>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
+            <li><a href="#services" className="transition-colors duration-300 hover:text-accent">Services</a></li>
+            <li><a href="#why" className="transition-colors duration-300 hover:text-accent">Why Us</a></li>
+            <li><a href="#process" className="transition-colors duration-300 hover:text-accent">Process</a></li>
+            <li><a href="#faq" className="transition-colors duration-300 hover:text-accent">FAQ</a></li>
+            <li><a href="#quote" className="transition-colors duration-300 hover:text-accent">Request a Quote</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Contact
           </h4>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
+          <ul className="mt-5 space-y-3 text-sm text-white/70">
             <li className="flex items-start gap-2">
-              <Phone className="mt-0.5 h-4 w-4 text-accent-deep" />
-              <a href={PHONE_HREF} className="hover:text-accent-deep">{PHONE_DISPLAY}</a>
+              <Phone className="mt-0.5 h-4 w-4 text-accent" />
+              <a href={PHONE_HREF} className="transition-colors duration-300 hover:text-accent">{PHONE_DISPLAY}</a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail className="mt-0.5 h-4 w-4 text-accent-deep" />
-              <a href="mailto:info@gmail.com" className="hover:text-accent-deep">info@gmail.com</a>
+              <Mail className="mt-0.5 h-4 w-4 text-accent" />
+              <a href="mailto:info@gmail.com" className="transition-colors duration-300 hover:text-accent">info@gmail.com</a>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 text-accent-deep" />
+              <MapPin className="mt-0.5 h-4 w-4 text-accent" />
               <span>Serving North &amp; South Carolina</span>
             </li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Credentials
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
             <li className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-accent-deep" /> Fully Licensed &amp; Insured
+              <ShieldCheck className="h-4 w-4 text-accent" /> Fully Licensed &amp; Insured
             </li>
             <li className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-accent-deep" /> Proof of General Liability
+              <Award className="h-4 w-4 text-accent" /> Proof of General Liability
             </li>
             <li className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-accent-deep" /> Dustless Sanding System
+              <Sparkles className="h-4 w-4 text-accent" /> Dustless Sanding System
             </li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-border px-4 pt-6 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-3 text-xs text-muted-foreground sm:flex-row">
+      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 px-4 pt-6 md:px-6">
+        <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/55 sm:flex-row">
           <div>© 2026 Top Pro Flooring LLC. All Rights Reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-accent-deep">Privacy Policy</a>
-            <a href="#" className="hover:text-accent-deep">Terms &amp; Conditions</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent">Privacy Policy</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>
