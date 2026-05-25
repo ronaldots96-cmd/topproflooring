@@ -82,9 +82,9 @@ function Header() {
           <img
             src={logoTopPro}
             alt="Top Pro Flooring LLC"
-            width={160}
-            height={120}
-            className="h-12 w-auto object-contain md:h-14"
+            width={240}
+            height={180}
+            className="h-20 w-auto object-contain md:h-24"
           />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
