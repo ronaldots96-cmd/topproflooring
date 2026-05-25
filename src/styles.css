@@ -62,26 +62,33 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Slate Navy + Amber */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.03 250);
+  --foreground: oklch(0.21 0.04 256);                 /* slate-900 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 250);
+  --card-foreground: oklch(0.21 0.04 256);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 250);
-  --primary: oklch(0.24 0.06 255);
+  --popover-foreground: oklch(0.21 0.04 256);
+  --primary: oklch(0.23 0.05 258);                    /* #0F172A slate-950 */
   --primary-foreground: oklch(0.99 0.005 250);
-  --secondary: oklch(0.96 0.01 250);
-  --secondary-foreground: oklch(0.24 0.06 255);
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.5 0.03 255);
-  --accent: oklch(0.72 0.16 55);
-  --accent-foreground: oklch(0.18 0.03 250);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.92 0.012 255);
-  --input: oklch(0.92 0.012 255);
-  --ring: oklch(0.72 0.16 55);
+  --secondary: oklch(0.97 0.008 256);                 /* slate-50 */
+  --secondary-foreground: oklch(0.23 0.05 258);
+  --muted: oklch(0.96 0.008 256);                     /* slate-100 */
+  --muted-foreground: oklch(0.48 0.025 256);          /* slate-500 */
+  --accent: oklch(0.74 0.165 60);                     /* amber-500 #F59E0B */
+  --accent-foreground: oklch(0.21 0.04 256);
+  --accent-deep: oklch(0.66 0.18 50);                 /* amber-600 #D97706 */
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.99 0.003 247);
+  --border: oklch(0.92 0.012 256 / 0.8);              /* slate-200/80 */
+  --input: oklch(0.92 0.012 256);
+  --ring: oklch(0.74 0.165 60);
+  --surface-1: oklch(0.985 0.005 256);                /* slate-50 alt */
+  --surface-2: oklch(0.965 0.008 256);                /* slate-100 alt */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
