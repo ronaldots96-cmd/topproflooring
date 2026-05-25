@@ -1030,23 +1030,19 @@ function QuoteForm() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="border-t border-border bg-surface-1 py-14">
+    <footer className="border-t border-white/10 bg-primary-deep py-16 text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-4 md:px-6">
         <div>
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
-              <Layers className="h-5 w-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-[15px] font-extrabold tracking-tight text-primary">
-                TOP PRO
-              </div>
-              <div className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-accent-deep">
-                Flooring · LLC
-              </div>
-            </div>
+          <div className="inline-flex items-center justify-center rounded-2xl bg-white/95 p-3 shadow-lg ring-1 ring-white/20">
+            <img
+              src={logoTopPro}
+              alt="Top Pro Flooring LLC"
+              width={200}
+              height={150}
+              className="h-16 w-auto object-contain"
+            />
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-sm leading-relaxed text-white/70">
             The flooring subcontractor that protects your schedule, your budget,
             and your reputation.
           </p>
