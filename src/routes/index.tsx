@@ -82,9 +82,9 @@ function Header() {
           <img
             src={logoTopPro}
             alt="Top Pro Flooring LLC"
-            width={160}
-            height={120}
-            className="h-12 w-auto object-contain md:h-14"
+            width={240}
+            height={180}
+            className="h-20 w-auto object-contain md:h-24"
           />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
@@ -1030,77 +1030,77 @@ function QuoteForm() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-primary-deep py-16 text-primary-foreground">
+    <footer className="border-t border-border bg-white py-16 text-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-4 md:px-6">
         <div>
-          <div className="inline-flex items-center justify-center rounded-2xl bg-white/95 p-3 shadow-lg ring-1 ring-white/20">
+          <div className="inline-flex items-center justify-center">
             <img
               src={logoTopPro}
               alt="Top Pro Flooring LLC"
-              width={200}
-              height={150}
-              className="h-16 w-auto object-contain"
+              width={320}
+              height={240}
+              className="h-28 w-auto object-contain md:h-32"
             />
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-white/70">
+          <p className="mt-5 text-sm leading-relaxed text-foreground/70">
             The flooring subcontractor that protects your schedule, your budget,
             and your reputation.
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
             Quick Links
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
-            <li><a href="#services" className="transition-colors duration-300 hover:text-accent">Services</a></li>
-            <li><a href="#why" className="transition-colors duration-300 hover:text-accent">Why Us</a></li>
-            <li><a href="#process" className="transition-colors duration-300 hover:text-accent">Process</a></li>
-            <li><a href="#faq" className="transition-colors duration-300 hover:text-accent">FAQ</a></li>
-            <li><a href="#quote" className="transition-colors duration-300 hover:text-accent">Request a Quote</a></li>
+          <ul className="mt-5 space-y-2.5 text-sm text-foreground/70">
+            <li><a href="#services" className="transition-colors duration-300 hover:text-accent-deep">Services</a></li>
+            <li><a href="#why" className="transition-colors duration-300 hover:text-accent-deep">Why Us</a></li>
+            <li><a href="#process" className="transition-colors duration-300 hover:text-accent-deep">Process</a></li>
+            <li><a href="#faq" className="transition-colors duration-300 hover:text-accent-deep">FAQ</a></li>
+            <li><a href="#quote" className="transition-colors duration-300 hover:text-accent-deep">Request a Quote</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
             Contact
           </h4>
-          <ul className="mt-5 space-y-3 text-sm text-white/70">
+          <ul className="mt-5 space-y-3 text-sm text-foreground/70">
             <li className="flex items-start gap-2">
-              <Phone className="mt-0.5 h-4 w-4 text-accent" />
-              <a href={PHONE_HREF} className="transition-colors duration-300 hover:text-accent">{PHONE_DISPLAY}</a>
+              <Phone className="mt-0.5 h-4 w-4 text-accent-deep" />
+              <a href={PHONE_HREF} className="transition-colors duration-300 hover:text-accent-deep">{PHONE_DISPLAY}</a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail className="mt-0.5 h-4 w-4 text-accent" />
-              <a href="mailto:info@gmail.com" className="transition-colors duration-300 hover:text-accent">info@gmail.com</a>
+              <Mail className="mt-0.5 h-4 w-4 text-accent-deep" />
+              <a href="mailto:info@gmail.com" className="transition-colors duration-300 hover:text-accent-deep">info@gmail.com</a>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 text-accent" />
+              <MapPin className="mt-0.5 h-4 w-4 text-accent-deep" />
               <span>Serving North &amp; South Carolina</span>
             </li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
             Credentials
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
+          <ul className="mt-5 space-y-2.5 text-sm text-foreground/70">
             <li className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-accent" /> Fully Licensed &amp; Insured
+              <ShieldCheck className="h-4 w-4 text-accent-deep" /> Fully Licensed &amp; Insured
             </li>
             <li className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-accent" /> Proof of General Liability
+              <Award className="h-4 w-4 text-accent-deep" /> Proof of General Liability
             </li>
             <li className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-accent" /> Dustless Sanding System
+              <Sparkles className="h-4 w-4 text-accent-deep" /> Dustless Sanding System
             </li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 px-4 pt-6 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/55 sm:flex-row">
+      <div className="mx-auto mt-12 max-w-7xl border-t border-border px-4 pt-6 md:px-6">
+        <div className="flex flex-col items-center justify-between gap-3 text-xs text-foreground/55 sm:flex-row">
           <div>© 2026 Top Pro Flooring LLC. All Rights Reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="transition-colors duration-300 hover:text-accent">Privacy Policy</a>
-            <a href="#" className="transition-colors duration-300 hover:text-accent">Terms &amp; Conditions</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent-deep">Privacy Policy</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent-deep">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>
