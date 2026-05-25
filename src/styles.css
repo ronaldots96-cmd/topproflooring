@@ -167,6 +167,8 @@
 @utility bg-surface-2 { background-color: var(--surface-2); }
 @utility text-accent-deep { color: var(--accent-deep); }
 @utility bg-accent-deep { background-color: var(--accent-deep); }
+@utility bg-primary-deep { background-color: var(--primary-deep); }
+@utility text-primary-deep { color: var(--primary-deep); }
 
 @keyframes shimmer-arrow {
   0%, 100% { transform: translateX(0); }
@@ -180,4 +182,16 @@
     linear-gradient(to bottom, oklch(1 0 0 / 0.06) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+/* Parallax / fixed background section */
+.bg-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .bg-parallax { background-attachment: scroll; }
+}
+
 
