@@ -566,10 +566,18 @@ function Services() {
   );
 }
 
-/* ---------- WHY US (bento) ---------- */
+/* ---------- WHY US (balanced symmetric grid) ---------- */
 function WhyUs() {
+  const features = [
+    { icon: Wrench, t: "Full-Service Expertise", d: "Installation, Refinishing, Buff & Coat, and Repair — handled by one specialized team across every phase of your build." },
+    { icon: Users, t: "Professional Team", d: "Licensed, insured, and trained crews built for demanding active job sites." },
+    { icon: Clock, t: "Reliable Scheduling", d: "Fast turnaround and strict adherence to your construction phases and milestones." },
+    { icon: Sparkles, t: "Dustless System", d: "Zero airborne mess — protects fresh paint, HVAC, and your cleaning crew's time." },
+    { icon: Handshake, t: "Flexible Subcontracting", d: "Per-project bids or ongoing long-term trade partnerships — fully tailored." },
+    { icon: DollarSign, t: "Transparent Pricing", d: "Clean line-items aligned with your budget. No surprises. No hidden fees. Ever." },
+  ];
   return (
-    <section id="why" className="bg-background py-20 md:py-24">
+    <section id="why" className="bg-surface-1 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mb-14 text-center">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-accent-deep">
@@ -581,72 +589,61 @@ function WhyUs() {
           </h2>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid auto-rows-[minmax(0,1fr)] gap-5 md:grid-cols-6">
-          {/* Big feature */}
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-primary p-8 text-primary-foreground shadow-xl md:col-span-3 md:row-span-2 md:p-10">
-            <div className="absolute -right-12 -top-12 h-56 w-56 rounded-full bg-accent/25 blur-3xl" />
-            <div className="absolute inset-0 bg-grid-faint opacity-30" />
-            <div className="relative">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground shadow-lg shadow-accent/40">
-                <Wrench className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 text-2xl font-extrabold tracking-tight md:text-3xl">
-                Full-Service Expertise
-              </h3>
-              <p className="mt-3 max-w-md text-[15px] leading-relaxed text-primary-foreground/75">
-                Installation, Refinishing, Buff &amp; Coat, and Repair — all
-                handled by one specialized team. One subcontractor, every
-                flooring scope, every phase of your build.
-              </p>
-              <div className="mt-8 grid grid-cols-3 gap-3">
-                {[
-                  { n: "100%", l: "Insured" },
-                  { n: "NC+SC", l: "Coverage" },
-                  { n: "0", l: "Dust" },
-                ].map((s) => (
-                  <div
-                    key={s.l}
-                    className="rounded-xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur"
-                  >
-                    <div className="text-xl font-extrabold tracking-tight text-accent">
-                      {s.n}
-                    </div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/60">
-                      {s.l}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {[
-            { icon: Users, t: "Professional Team", d: "Licensed, insured, and trained for demanding job sites." },
-            { icon: Clock, t: "Reliable Scheduling", d: "Fast turnaround, strict adherence to your phases." },
-            { icon: Sparkles, t: "Dustless System", d: "Zero mess for your cleaning crew." },
-            { icon: Handshake, t: "Flexible Subcontracting", d: "Per-project or ongoing partnerships." },
-            { icon: DollarSign, t: "Transparent Pricing", d: "No hidden line-items. Ever." },
-          ].map((it, i) => (
+        {/* Symmetric 3-column grid — perfectly balanced on desktop, 2-col tablet, 1-col mobile */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((it, i) => (
             <div
               key={it.t}
-              className={`group rounded-3xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl ${
-                i === 0 ? "md:col-span-3" : i === 1 || i === 2 ? "md:col-span-3" : "md:col-span-3"
+              className={`group flex h-full flex-col rounded-3xl border p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl md:p-8 ${
+                i === 0
+                  ? "border-accent/30 bg-primary text-primary-foreground hover:border-accent/60 hover:shadow-primary/20"
+                  : "border-border bg-card hover:border-accent/40 hover:shadow-primary/10"
               }`}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/15 text-accent-deep ring-1 ring-accent/20 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                  <it.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-bold tracking-tight text-primary">
-                    {it.t}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {it.d}
-                  </p>
-                </div>
+              <div
+                className={`flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 ${
+                  i === 0
+                    ? "bg-accent text-accent-foreground shadow-lg shadow-accent/40"
+                    : "bg-accent/15 text-accent-deep ring-1 ring-accent/20 group-hover:bg-accent group-hover:text-accent-foreground group-hover:shadow-md"
+                }`}
+              >
+                <it.icon className="h-6 w-6" />
               </div>
+              <h3
+                className={`mt-6 text-xl font-extrabold tracking-tight ${
+                  i === 0 ? "text-primary-foreground" : "text-primary"
+                }`}
+              >
+                {it.t}
+              </h3>
+              <p
+                className={`mt-2.5 flex-1 text-[15px] leading-relaxed ${
+                  i === 0 ? "text-primary-foreground/75" : "text-muted-foreground"
+                }`}
+              >
+                {it.d}
+              </p>
+              {i === 0 && (
+                <div className="mt-6 grid grid-cols-3 gap-2.5 border-t border-white/10 pt-6">
+                  {[
+                    { n: "100%", l: "Insured" },
+                    { n: "NC+SC", l: "Coverage" },
+                    { n: "0", l: "Dust" },
+                  ].map((s) => (
+                    <div
+                      key={s.l}
+                      className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-center backdrop-blur"
+                    >
+                      <div className="text-base font-extrabold tracking-tight text-accent">
+                        {s.n}
+                      </div>
+                      <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-white/65">
+                        {s.l}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
