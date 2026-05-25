@@ -46,6 +46,8 @@ import serviceHardwood from "@/assets/service-hardwood.jpg";
 import serviceBuff from "@/assets/service-buff.jpg";
 import serviceLvp from "@/assets/service-lvp.jpg";
 import serviceRepair from "@/assets/service-repair.jpg";
+import parallaxFloor from "@/assets/parallax-floor.jpg";
+import logoTopPro from "@/assets/logo-top-pro.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
