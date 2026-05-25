@@ -9,7 +9,7 @@ import {
   Clock,
   Sparkles,
   Wrench,
-  Layers,
+  Layers as _Layers,
   Handshake,
   DollarSign,
   CheckCircle2,
