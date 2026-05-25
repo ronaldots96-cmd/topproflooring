@@ -78,18 +78,14 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20 ring-1 ring-inset ring-white/10">
-            <Layers className="h-5 w-5" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-[15px] font-extrabold tracking-tight text-primary">
-              TOP PRO
-            </div>
-            <div className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-accent-deep">
-              Flooring · LLC
-            </div>
-          </div>
+        <a href="#top" className="flex items-center gap-3 transition-all duration-300 hover:opacity-90">
+          <img
+            src={logoTopPro}
+            alt="Top Pro Flooring LLC"
+            width={160}
+            height={120}
+            className="h-12 w-auto object-contain md:h-14"
+          />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
