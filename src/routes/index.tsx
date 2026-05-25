@@ -1048,59 +1048,59 @@ function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Quick Links
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-            <li><a href="#services" className="hover:text-accent-deep">Services</a></li>
-            <li><a href="#why" className="hover:text-accent-deep">Why Us</a></li>
-            <li><a href="#process" className="hover:text-accent-deep">Process</a></li>
-            <li><a href="#faq" className="hover:text-accent-deep">FAQ</a></li>
-            <li><a href="#quote" className="hover:text-accent-deep">Request a Quote</a></li>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
+            <li><a href="#services" className="transition-colors duration-300 hover:text-accent">Services</a></li>
+            <li><a href="#why" className="transition-colors duration-300 hover:text-accent">Why Us</a></li>
+            <li><a href="#process" className="transition-colors duration-300 hover:text-accent">Process</a></li>
+            <li><a href="#faq" className="transition-colors duration-300 hover:text-accent">FAQ</a></li>
+            <li><a href="#quote" className="transition-colors duration-300 hover:text-accent">Request a Quote</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Contact
           </h4>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
+          <ul className="mt-5 space-y-3 text-sm text-white/70">
             <li className="flex items-start gap-2">
-              <Phone className="mt-0.5 h-4 w-4 text-accent-deep" />
-              <a href={PHONE_HREF} className="hover:text-accent-deep">{PHONE_DISPLAY}</a>
+              <Phone className="mt-0.5 h-4 w-4 text-accent" />
+              <a href={PHONE_HREF} className="transition-colors duration-300 hover:text-accent">{PHONE_DISPLAY}</a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail className="mt-0.5 h-4 w-4 text-accent-deep" />
-              <a href="mailto:info@gmail.com" className="hover:text-accent-deep">info@gmail.com</a>
+              <Mail className="mt-0.5 h-4 w-4 text-accent" />
+              <a href="mailto:info@gmail.com" className="transition-colors duration-300 hover:text-accent">info@gmail.com</a>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 text-accent-deep" />
+              <MapPin className="mt-0.5 h-4 w-4 text-accent" />
               <span>Serving North &amp; South Carolina</span>
             </li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Credentials
           </h4>
-          <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+          <ul className="mt-5 space-y-2.5 text-sm text-white/70">
             <li className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-accent-deep" /> Fully Licensed &amp; Insured
+              <ShieldCheck className="h-4 w-4 text-accent" /> Fully Licensed &amp; Insured
             </li>
             <li className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-accent-deep" /> Proof of General Liability
+              <Award className="h-4 w-4 text-accent" /> Proof of General Liability
             </li>
             <li className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-accent-deep" /> Dustless Sanding System
+              <Sparkles className="h-4 w-4 text-accent" /> Dustless Sanding System
             </li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-border px-4 pt-6 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-3 text-xs text-muted-foreground sm:flex-row">
+      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 px-4 pt-6 md:px-6">
+        <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/55 sm:flex-row">
           <div>© 2026 Top Pro Flooring LLC. All Rights Reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-accent-deep">Privacy Policy</a>
-            <a href="#" className="hover:text-accent-deep">Terms &amp; Conditions</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent">Privacy Policy</a>
+            <a href="#" className="transition-colors duration-300 hover:text-accent">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>
