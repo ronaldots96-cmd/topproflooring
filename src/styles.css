@@ -144,8 +144,39 @@
     border-color: var(--color-border);
   }
 
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
   }
 }
+
+@utility bg-surface-1 { background-color: var(--surface-1); }
+@utility bg-surface-2 { background-color: var(--surface-2); }
+@utility text-accent-deep { color: var(--accent-deep); }
+@utility bg-accent-deep { background-color: var(--accent-deep); }
+
+@keyframes shimmer-arrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+.arrow-bounce { animation: shimmer-arrow 1.4s ease-in-out infinite; }
+
+.bg-grid-faint {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
