@@ -72,18 +72,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Flooring Partner Pro provides professional flooring services for contractors, builders, and remodelers." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Flooring Partner Pro provides professional flooring services for contractors, builders, and remodelers." },
+      { title: "Top Pro Flooring | Flooring Services for NC & SC Homes" },
+      {
+        name: "description",
+        content:
+          "Hardwood installation, refinishing, buff and coat, LVP, and flooring repairs for homeowners across North and South Carolina.",
+      },
+      { name: "author", content: "Top Pro Flooring LLC" },
+      { property: "og:title", content: "Top Pro Flooring | Beautiful Floors for NC & SC Homes" },
+      {
+        property: "og:description",
+        content:
+          "Professional flooring installation, refinishing, and repair for homeowners across North and South Carolina.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Flooring Partner Pro provides professional flooring services for contractors, builders, and remodelers." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b04decd1-d3cd-4805-aee4-b4a29938f8c1/id-preview-2b01106e--6ebe0d71-50c4-41bf-8382-082f61ebdf0a.lovable.app-1779746075887.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b04decd1-d3cd-4805-aee4-b4a29938f8c1/id-preview-2b01106e--6ebe0d71-50c4-41bf-8382-082f61ebdf0a.lovable.app-1779746075887.png" },
+      { name: "twitter:title", content: "Top Pro Flooring | Beautiful Floors for NC & SC Homes" },
+      {
+        name: "twitter:description",
+        content:
+          "Professional flooring installation, refinishing, and repair for homeowners across North and South Carolina.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b04decd1-d3cd-4805-aee4-b4a29938f8c1/id-preview-2b01106e--6ebe0d71-50c4-41bf-8382-082f61ebdf0a.lovable.app-1779746075887.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b04decd1-d3cd-4805-aee4-b4a29938f8c1/id-preview-2b01106e--6ebe0d71-50c4-41bf-8382-082f61ebdf0a.lovable.app-1779746075887.png",
+      },
     ],
     links: [
       {
